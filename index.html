@@ -1,1 +1,1485 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AET AI Academy - Ovládněte umělou inteligenci s našimi kurzy. ChatGPT, AI pro podnikatele a programování s AI. Profesionální vzdělávání v oblasti AI.">
+    <meta name="keywords" content="AI kurzy, ChatGPT, umělá inteligence, programování AI, AI pro podnikatele, online kurzy">
+    <meta name="author" content="AET AI Academy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aetaiacademy.com/">
+    <meta property="og:title" content="AET AI Academy - Ovládněte budoucnost s AI">
+    <meta property="og:description" content="Profesionální kurzy umělé inteligence. Naučte se ChatGPT, AI pro podnikání a programování s AI.">
+    <meta property="og:image" content="https://aetaiacademy.com/assets/og-image.jpg">
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aetaiacademy.com/">
+    <meta property="twitter:title" content="AET AI Academy - Ovládněte budoucnost s AI">
+    <meta property="twitter:description" content="Profesionální kurzy umělé inteligence. Naučte se ChatGPT, AI pro podnikání a programování s AI.">
+    <meta property="twitter:image" content="https://aetaiacademy.com/assets/og-image.jpg">
+
+    <title>AET AI Academy - Ovládněte budoucnost s AI</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "AET AI Academy",
+        "description": "Profesionální kurzy umělé inteligence a ChatGPT",
+        "url": "https://aetaiacademy.com",
+        "logo": "https://aetaiacademy.com/assets/logo.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CZ"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI kurzy",
+            "itemListElement": [
+                {
+                    "@type": "Course",
+                    "name": "Mistrovství ChatGPT",
+                    "description": "Kompletní průvodce ChatGPT pro všechny úrovně"
+                },
+                {
+                    "@type": "Course", 
+                    "name": "AI pro podnikatele",
+                    "description": "Využití AI v podnikání a automatizace procesů"
+                },
+                {
+                    "@type": "Course",
+                    "name": "Programování s AI",
+                    "description": "Vývoj aplikací s umělou inteligencí"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <style>
+        /* === ZÁKLADNÍ NASTAVENÍ === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Hlavní barvy */
+            --primary-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
+            --secondary-gradient: linear-gradient(135deg, #7209b7 0%, #2563eb 50%, #059669 100%);
+            --accent-color: #00ffff;
+            --accent-secondary: #7c3aed;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a9c0;
+            --text-muted: #6b7280;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            
+            /* Typografie */
+            --font-family: 'Montserrat', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            
+            /* Rozestupy */
+            --spacing-1: 0.25rem;
+            --spacing-2: 0.5rem;
+            --spacing-3: 0.75rem;
+            --spacing-4: 1rem;
+            --spacing-6: 1.5rem;
+            --spacing-8: 2rem;
+            --spacing-12: 3rem;
+            --spacing-16: 4rem;
+            --spacing-20: 5rem;
+            
+            /* Animace */
+            --transition-fast: 0.15s ease-out;
+            --transition-base: 0.3s ease-out;
+            --transition-slow: 0.5s ease-out;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--primary-gradient);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* === UTILITY CLASSES === */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-4);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-slow);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            transition: all var(--transition-base);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background: var(--secondary-gradient);
+            color: var(--text-primary);
+            padding: var(--spacing-4) var(--spacing-8);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left var(--transition-slow);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+        }
+
+        /* === NAVIGACE === */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all var(--transition-base);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-4) 0;
+        }
+
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-8);
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-base);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent-color);
+            transition: width var(--transition-base);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: var(--spacing-2);
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            padding: var(--spacing-2) var(--spacing-3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-size: var(--font-size-sm);
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--accent-secondary);
+            color: var(--text-primary);
+            border-color: var(--accent-secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--text-primary);
+            font-size: var(--font-size-xl);
+            cursor: pointer;
+        }
+
+        /* === HERO SEKCE === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: var(--font-size-6xl);
+            font-weight: 800;
+            margin-bottom: var(--spacing-6);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero .subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-8);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero .cta-button {
+            font-size: var(--font-size-lg);
+            padding: var(--spacing-6) var(--spacing-12);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === KURZY SEKCE === */
+        .courses {
+            padding: var(--spacing-20) 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-16);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-8);
+            margin-bottom: var(--spacing-16);
+        }
+
+        .course-card {
+            padding: var(--spacing-8);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary-gradient);
+            transform: scaleX(0);
+            transition: transform var(--transition-base);
+        }
+
+        .course-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .course-icon {
+            font-size: var(--font-size-5xl);
+            margin-bottom: var(--spacing-6);
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .course-card h3 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-4);
+            color: var(--text-primary);
+        }
+
+        .course-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-6);
+            line-height: 1.7;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-6);
+            font-size: var(--font-size-sm);
+            color: var(--text-muted);
+        }
+
+        .course-price {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        /* === ABOUT SECTION === */
+        .about {
+            padding: var(--spacing-20) 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-12);
+            text-align: center;
+        }
+
+        /* === TESTIMONIALS SECTION === */
+        .testimonials {
+            padding: var(--spacing-20) 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-8);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            padding: var(--spacing-8);
+            text-align: center;
+        }
+
+        .testimonial-card p:first-child {
+            font-style: italic;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-4);
+            color: var(--text-secondary);
+        }
+
+        .testimonial-card p:last-child {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* === FAQ SECTION === */
+        .faq {
+            padding: var(--spacing-20) 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            padding: var(--spacing-6);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .faq-item h3 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+        }
+
+        /* === EMAIL FORMULÁŘ === */
+        .newsletter {
+            padding: var(--spacing-20) 0;
+            text-align: center;
+        }
+
+        .newsletter-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: var(--spacing-12);
+        }
+
+        .newsletter h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-4);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .newsletter p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-8);
+            font-size: var(--font-size-lg);
+        }
+
+        .email-form {
+            display: flex;
+            gap: var(--spacing-4);
+            max-width: 400px;
+            margin: 0 auto var(--spacing-6);
+        }
+
+        .email-input {
+            flex: 1;
+            padding: var(--spacing-4);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-size: var(--font-size-base);
+            transition: all var(--transition-base);
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.2);
+        }
+
+        .email-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .gdpr-text {
+            font-size: var(--font-size-xs);
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .gdpr-text a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .gdpr-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: var(--spacing-16) 0 var(--spacing-8);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-8);
+            margin-bottom: var(--spacing-8);
+        }
+
+        .footer-section h4 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--spacing-4);
+            color: var(--text-primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--spacing-2);
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition-base);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-8);
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            font-size: var(--font-size-xl);
+            transition: all var(--transition-base);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-secondary);
+            color: var(--text-primary);
+            transform: translateY(-3px);
+        }
+
+        /* === RESPONZIVNÍ DESIGN === */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: var(--spacing-4);
+                border-top: 1px solid var(--glass-border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: var(--font-size-4xl);
+            }
+
+            .hero .subtitle {
+                font-size: var(--font-size-lg);
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-6);
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .container {
+                padding: 0 var(--spacing-3);
+            }
+
+            :root {
+                --spacing-16: 2rem;
+                --spacing-20: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .section-title {
+                font-size: var(--font-size-3xl);
+            }
+
+            .course-card {
+                padding: var(--spacing-6);
+            }
+
+            .newsletter-card {
+                padding: var(--spacing-8);
+            }
+        }
+
+        /* === PŘÍSTUPNOST === */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* === LOADING STATES === */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* === DARK MODE TOGGLE (BUDOUCÍ) === */
+        .theme-toggle {
+            position: fixed;
+            bottom: var(--spacing-4);
+            right: var(--spacing-4);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background: var(--accent-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVIGACE -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">AET AI Academy</div>
+                
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" data-cs="Domů" data-en="Home">Domů</a></li>
+                    <li><a href="#courses" data-cs="Kurzy" data-en="Courses">Kurzy</a></li>
+                    <li><a href="#about" data-cs="O nás" data-en="About">O nás</a></li>
+                    <li><a href="#contact" data-cs="Kontakt" data-en="Contact">Kontakt</a></li>
+                    
+                    <li class="language-switcher">
+                        <button class="lang-btn active" data-lang="cs">CZ</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </li>
+                </ul>
+                
+                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SEKCE -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-cs="Ovládněte budoucnost s umělou inteligencí" data-en="Master the future with artificial intelligence">
+                    Ovládněte budoucnost s umělou inteligencí
+                </h1>
+                <p class="subtitle" data-cs="Profesionální kurzy AI, které vás posunout o krok napřed v digitální éře" data-en="Professional AI courses that will put you one step ahead in the digital era">
+                    Profesionální kurzy AI, které vás posunout o krok napřed v digitální éře
+                </p>
+                <a href="#courses" class="btn-primary cta-button" data-cs="Prozkoumejte kurzy" data-en="Explore courses">
+                    Prozkoumejte kurzy
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title fade-in" data-cs="O AET AI Akademii" data-en="About AET AI Academy">O AET AI Akademii</h2>
+            <div class="about-content glass-card fade-in">
+                <p style="font-size: var(--font-size-lg); line-height: 1.8; color: var(--text-secondary);" 
+                   data-cs="Jsme nezisková vzdělávací platforma, která pomáhá jednotlivcům, školám i firmám porozumět světu umělé inteligence. Nabízíme praktické kurzy, poradenství a komunitu AI nadšenců." 
+                   data-en="We are a nonprofit educational platform helping individuals, schools, and businesses understand the world of artificial intelligence. We offer practical courses, consulting, and a growing AI community.">
+                    Jsme nezisková vzdělávací platforma, která pomáhá jednotlivcům, školám i firmám porozumět světu umělé inteligence. Nabízíme praktické kurzy, poradenství a komunitu AI nadšenců.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KURZY SEKCE -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2 class="section-title fade-in" data-cs="Naše kurzy" data-en="Our courses">Naše kurzy</h2>
+            
+            <div class="courses-grid">
+                <!-- ChatGPT kurz -->
+                <div class="course-card glass-card fade-in">
+                    <div class="course-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 data-cs="Mistrovství ChatGPT" data-en="ChatGPT Mastery">Mistrovství ChatGPT</h3>
+                    <p data-cs="Kompletní průvodce ChatGPT pro všechny úrovně. Naučte se tvořit dokonalé prompty a využívat AI pro produktivitu." data-en="Complete ChatGPT guide for all levels. Learn to create perfect prompts and use AI for productivity.">
+                        Kompletní průvodce ChatGPT pro všechny úrovně. Naučte se tvořit dokonalé prompty a využívat AI pro produktivitu.
+                      </p>
+                   <div class="course-meta">
+                       <span data-cs="⏱️ 12 hodin" data-en="⏱️ 12 hours">⏱️ 12 hodin</span>
+                       <span data-cs="📈 Začátečník - Pokročilý" data-en="📈 Beginner - Advanced">📈 Začátečník - Pokročilý</span>
+                   </div>
+                   <div class="course-price" data-cs="2.999 Kč" data-en="€120">2.999 Kč</div>
+                   <a href="https://courses.aetaiacademy.com/chatgpt" class="btn-primary" data-cs="Koupit kurz" data-en="Buy course">Koupit kurz</a>
+               </div>
+
+               <!-- AI pro podnikatele -->
+               <div class="course-card glass-card fade-in">
+                   <div class="course-icon">
+                       <i class="fas fa-briefcase"></i>
+                   </div>
+                   <h3 data-cs="AI pro podnikatele" data-en="AI for Entrepreneurs">AI pro podnikatele</h3>
+                   <p data-cs="Využití AI v podnikání, automatizace procesů a zvýšení efektivity. Praktické strategie pro moderní podnikatele." data-en="Using AI in business, process automation and efficiency improvement. Practical strategies for modern entrepreneurs.">
+                       Využití AI v podnikání, automatizace procesů a zvýšení efektivity. Praktické strategie pro moderní podnikatele.
+                   </p>
+                   <div class="course-meta">
+                       <span data-cs="⏱️ 15 hodin" data-en="⏱️ 15 hours">⏱️ 15 hodin</span>
+                       <span data-cs="📈 Střední pokročilost" data-en="📈 Intermediate">📈 Střední pokročilost</span>
+                   </div>
+                   <div class="course-price" data-cs="4.999 Kč" data-en="€199">4.999 Kč</div>
+                   <a href="https://courses.aetaiacademy.com/business-ai" class="btn-primary" data-cs="Koupit kurz" data-en="Buy course">Koupit kurz</a>
+               </div>
+
+               <!-- Programování s AI -->
+               <div class="course-card glass-card fade-in">
+                   <div class="course-icon">
+                       <i class="fas fa-code"></i>
+                   </div>
+                   <h3 data-cs="Programování s AI" data-en="Programming with AI">Programování s AI</h3>
+                   <p data-cs="Vývoj aplikací s umělou inteligencí, machine learning a praktické implementace AI řešení." data-en="Developing applications with artificial intelligence, machine learning and practical AI solution implementations.">
+                       Vývoj aplikací s umělou inteligencí, machine learning a praktické implementace AI řešení.
+                   </p>
+                   <div class="course-meta">
+                       <span data-cs="⏱️ 25 hodin" data-en="⏱️ 25 hours">⏱️ 25 hodin</span>
+                       <span data-cs="📈 Pokročilý" data-en="📈 Advanced">📈 Pokročilý</span>
+                   </div>
+                   <div class="course-price" data-cs="7.999 Kč" data-en="€319">7.999 Kč</div>
+                   <a href="https://courses.aetaiacademy.com/ai-programming" class="btn-primary" data-cs="Koupit kurz" data-en="Buy course">Koupit kurz</a>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- TESTIMONIALS SECTION -->
+   <section class="testimonials" id="testimonials">
+       <div class="container">
+           <h2 class="section-title fade-in" data-cs="Co o nás říkají studenti" data-en="What our learners say">Co o nás říkají studenti</h2>
+           <div class="testimonials-grid">
+               <div class="testimonial-card glass-card fade-in">
+                   <p data-cs="„Díky AET AI Academy jsem konečně pochopila, jak AI může pomoci ve výuce.""
+                      data-en=""Thanks to AET AI Academy, I finally understood how AI can help in teaching."">
+                       „Díky AET AI Academy jsem konečně pochopila, jak AI může pomoci ve výuce."
+                   </p>
+                   <p data-cs="– Eva, učitelka"
+                      data-en="– Eva, teacher">
+                       – Eva, učitelka
+                   </p>
+               </div>
+               <div class="testimonial-card glass-card fade-in">
+                   <p data-cs="„Z kurzu AI pro podnikatele jsem získal konkrétní nástroje pro zrychlení mé práce.""
+                      data-en=""The AI for Entrepreneurs course gave me real tools to speed up my work."">
+                       „Z kurzu AI pro podnikatele jsem získal konkrétní nástroje pro zrychlení mé práce."
+                   </p>
+                   <p data-cs="– Tomáš, startup zakladatel"
+                      data-en="– Tomáš, startup founder">
+                       – Tomáš, startup zakladatel
+                   </p>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- FAQ SECTION -->
+   <section class="faq" id="faq">
+       <div class="container">
+           <h2 class="section-title fade-in" data-cs="Nejčastější otázky" data-en="Frequently Asked Questions">Nejčastější otázky</h2>
+           <div class="faq-container">
+               <div class="faq-item glass-card fade-in">
+                   <h3 data-cs="Je kurz zdarma?"
+                       data-en="Is the course free?">
+                       Je kurz zdarma?
+                   </h3>
+                   <p data-cs="Ano, některé kurzy jsou zdarma, jiné za symbolický příspěvek."
+                      data-en="Yes, some courses are free, others require a small donation.">
+                       Ano, některé kurzy jsou zdarma, jiné za symbolický příspěvek.
+                   </p>
+               </div>
+               <div class="faq-item glass-card fade-in">
+                   <h3 data-cs="Musím mít předchozí zkušenosti s AI?"
+                       data-en="Do I need prior AI experience?">
+                       Musím mít předchozí zkušenosti s AI?
+                   </h3>
+                   <p data-cs="Ne, všechny kurzy jsou vhodné i pro začátečníky."
+                      data-en="No, our courses are suitable even for beginners.">
+                       Ne, všechny kurzy jsou vhodné i pro začátečníky.
+                   </p>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- EMAIL FORMULÁŘ -->
+   <section class="newsletter" id="newsletter">
+       <div class="container">
+           <div class="newsletter-card glass-card fade-in">
+               <h2 data-cs="Získej přístup k bezplatnému AI kurzu" data-en="Get Access to a Free AI Course">Získej přístup k bezplatnému AI kurzu</h2>
+               <p data-cs="Stačí zadat svůj e-mail a začít měnit svou budoucnost už dnes!" data-en="Just enter your email and start transforming your future today!">
+                   Stačí zadat svůj e-mail a začít měnit svou budoucnost už dnes!
+               </p>
+               
+               <!-- FAPI formulář -->
+               <form class="email-form" id="newsletter-form" action="#" method="post">
+                   <input 
+                       type="email" 
+                       class="email-input" 
+                       name="email" 
+                       placeholder="váš@email.cz"
+                       data-cs-placeholder="váš@email.cz"
+                       data-en-placeholder="your@email.com"
+                       required 
+                       id="email-input"
+                   >
+                   <button type="submit" class="btn-primary" data-cs="Získat kurz zdarma" data-en="Get Free Course">
+                       Získat kurz zdarma
+                   </button>
+               </form>
+               
+               <p class="gdpr-text">
+                   <span data-cs="Odesláním souhlasíte s našimi " data-en="By submitting you agree to our ">Odesláním souhlasíte s našimi </span>
+                   <a href="/gdpr" data-cs="podmínkami ochrany osobních údajů" data-en="privacy policy terms">podmínkami ochrany osobních údajů</a>
+                   <span data-cs=". Odhlásit se můžete kdykoliv." data-en=". You can unsubscribe at any time.">. Odhlásit se můžete kdykoliv.</span>
+               </p>
+           </div>
+       </div>
+   </section>
+
+   <!-- FOOTER -->
+   <footer class="footer">
+       <div class="container">
+           <div class="footer-content">
+               <div class="footer-section">
+                   <h4 data-cs="Kurzy" data-en="Courses">Kurzy</h4>
+                   <ul>
+                       <li><a href="https://courses.aetaiacademy.com/chatgpt" data-cs="ChatGPT Mistrovství" data-en="ChatGPT Mastery">ChatGPT Mistrovství</a></li>
+                       <li><a href="https://courses.aetaiacademy.com/business-ai" data-cs="AI pro podnikatele" data-en="AI for Business">AI pro podnikatele</a></li>
+                       <li><a href="https://courses.aetaiacademy.com/ai-programming" data-cs="Programování s AI" data-en="AI Programming">Programování s AI</a></li>
+                       <li><a href="https://courses.aetaiacademy.com" data-cs="Všechny kurzy" data-en="All courses">Všechny kurzy</a></li>
+                   </ul>
+               </div>
+               
+               <div class="footer-section">
+                   <h4 data-cs="Společnost" data-en="Company">Společnost</h4>
+                   <ul>
+                       <li><a href="/about" data-cs="O nás" data-en="About us">O nás</a></li>
+                       <li><a href="/team" data-cs="Tým" data-en="Team">Tým</a></li>
+                       <li><a href="/careers" data-cs="Kariéra" data-en="Careers">Kariéra</a></li>
+                       <li><a href="/press" data-cs="Tisk" data-en="Press">Tisk</a></li>
+                   </ul>
+               </div>
+               
+               <div class="footer-section">
+                   <h4 data-cs="Podpora" data-en="Support">Podpora</h4>
+                   <ul>
+                       <li><a href="/help" data-cs="Nápověda" data-en="Help">Nápověda</a></li>
+                       <li><a href="/contact" data-cs="Kontakt" data-en="Contact">Kontakt</a></li>
+                       <li><a href="/faq" data-cs="FAQ" data-en="FAQ">FAQ</a></li>
+                       <li><a href="/community" data-cs="Komunita" data-en="Community">Komunita</a></li>
+                   </ul>
+               </div>
+               
+               <div class="footer-section">
+                   <h4 data-cs="Právní" data-en="Legal">Právní</h4>
+                   <ul>
+                       <li><a href="/privacy" data-cs="Ochrana soukromí" data-en="Privacy policy">Ochrana soukromí</a></li>
+                       <li><a href="/terms" data-cs="Podmínky použití" data-en="Terms of use">Podmínky použití</a></li>
+                       <li><a href="/gdpr" data-cs="GDPR" data-en="GDPR">GDPR</a></li>
+                       <li><a href="/cookies" data-cs="Cookies" data-en="Cookies">Cookies</a></li>
+                   </ul>
+               </div>
+           </div>
+           
+           <div class="social-links">
+               <a href="https://www.linkedin.com/company/aet-ai-academy" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-linkedin-in"></i>
+               </a>
+               <a href="https://www.facebook.com/aetaiacademy" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-facebook-f"></i>
+               </a>
+               <a href="https://www.instagram.com/aetaiacademy" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-instagram"></i>
+               </a>
+               <a href="https://www.youtube.com/@aetaiacademy" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-youtube"></i>
+               </a>
+               <a href="https://twitter.com/aetaiacademy" target="_blank" rel="noopener noreferrer">
+                   <i class="fab fa-twitter"></i>
+               </a>
+           </div>
+           
+           <div class="footer-bottom">
+               <p data-cs="© 2025 AET AI Academy. Všechna práva vyhrazena." data-en="© 2025 AET AI Academy. All rights reserved.">
+                   © 2025 AET AI Academy. Všechna práva vyhrazena.
+               </p>
+               <p data-cs="Tento web používá cookies a dodržuje zásady ochrany osobních údajů." data-en="This website uses cookies and complies with privacy policies.">
+                   Tento web používá cookies a dodržuje zásady ochrany osobních údajů.
+               </p>
+               <p>
+                   <span data-cs="Kontakt: " data-en="Contact: ">Kontakt: </span>
+                   <a href="mailto:info@aetaiacademy.com" style="color: var(--accent-color);">info@aetaiacademy.com</a>
+               </p>
+           </div>
+       </div>
+   </footer>
+
+   <!-- THEME TOGGLE (pro budoucí dark mode) -->
+   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+       <i class="fas fa-moon"></i>
+   </button>
+
+   <!-- JAVASCRIPT -->
+   <script>
+       // === JAZYKOVÉ PŘEPÍNÁNÍ ===
+       class LanguageSwitcher {
+           constructor() {
+               this.currentLang = 'cs';
+               this.langButtons = document.querySelectorAll('.lang-btn');
+               this.init();
+           }
+
+           init() {
+               // Nastavení událostí pro jazykové tlačítka
+               this.langButtons.forEach(btn => {
+                   btn.addEventListener('click', (e) => {
+                       const lang = e.target.getAttribute('data-lang');
+                       this.switchLanguage(lang);
+                   });
+               });
+
+               // Detekce jazyka prohlížeče
+               const browserLang = navigator.language.substr(0, 2);
+               if (browserLang === 'en') {
+                   this.switchLanguage('en');
+               }
+           }
+
+           switchLanguage(lang) {
+               this.currentLang = lang;
+               
+               // Aktualizace aktivního tlačítka
+               this.langButtons.forEach(btn => {
+                   btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+               });
+
+               // Změna textu všech elementů s data atributy
+               const elements = document.querySelectorAll(`[data-${lang}]`);
+               elements.forEach(element => {
+                   const text = element.getAttribute(`data-${lang}`);
+                   if (text) {
+                       if (element.tagName === 'INPUT' && element.type === 'email') {
+                           element.placeholder = text;
+                       } else {
+                           element.textContent = text;
+                       }
+                   }
+               });
+
+               // Změna meta description pro SEO
+               const metaDesc = document.querySelector('meta[name="description"]');
+               if (lang === 'en') {
+                   metaDesc.content = "AET AI Academy - Master artificial intelligence with our courses. ChatGPT, AI for entrepreneurs and AI programming. Professional AI education.";
+                   document.title = "AET AI Academy - Master the future with AI";
+                   document.documentElement.lang = 'en';
+               } else {
+                   metaDesc.content = "AET AI Academy - Ovládněte umělou inteligenci s našimi kurzy. ChatGPT, AI pro podnikatele a programování s AI. Profesionální vzdělávání v oblasti AI.";
+                   document.title = "AET AI Academy - Ovládněte budoucnost s AI";
+                   document.documentElement.lang = 'cs';
+               }
+
+               // Uložení preference do localStorage
+               localStorage.setItem('aet-language', lang);
+           }
+       }
+
+       // === MOBILNÍ NAVIGACE ===
+       class MobileNav {
+           constructor() {
+               this.menuBtn = document.getElementById('mobile-menu-btn');
+               this.navLinks = document.getElementById('nav-links');
+               this.isOpen = false;
+               this.init();
+           }
+
+           init() {
+               this.menuBtn.addEventListener('click', () => this.toggle());
+               
+               // Zavření menu při kliknutí na odkaz
+               this.navLinks.querySelectorAll('a').forEach(link => {
+                   link.addEventListener('click', () => this.close());
+               });
+
+               // Zavření menu při kliknutí mimo
+               document.addEventListener('click', (e) => {
+                   if (!e.target.closest('.navbar') && this.isOpen) {
+                       this.close();
+                   }
+               });
+           }
+
+           toggle() {
+               this.isOpen = !this.isOpen;
+               this.navLinks.classList.toggle('active', this.isOpen);
+               this.menuBtn.innerHTML = this.isOpen ? 
+                   '<i class="fas fa-times"></i>' : 
+                   '<i class="fas fa-bars"></i>';
+           }
+
+           close() {
+               this.isOpen = false;
+               this.navLinks.classList.remove('active');
+               this.menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+           }
+       }
+
+       // === PLYNULÉ SCROLLOVÁNÍ ===
+       class SmoothScroll {
+           constructor() {
+               this.init();
+           }
+
+           init() {
+               document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                   anchor.addEventListener('click', (e) => {
+                       e.preventDefault();
+                       const target = document.querySelector(anchor.getAttribute('href'));
+                       if (target) {
+                           const navHeight = document.querySelector('.navbar').offsetHeight;
+                           const targetPosition = target.offsetTop - navHeight;
+                           
+                           window.scrollTo({
+                               top: targetPosition,
+                               behavior: 'smooth'
+                           });
+                       }
+                   });
+               });
+           }
+       }
+
+       // === SCROLL ANIMACE ===
+       class ScrollAnimations {
+           constructor() {
+               this.observer = null;
+               this.init();
+           }
+
+           init() {
+               // Intersection Observer pro fade-in animace
+               this.observer = new IntersectionObserver((entries) => {
+                   entries.forEach(entry => {
+                       if (entry.isIntersecting) {
+                           entry.target.classList.add('visible');
+                       }
+                   });
+               }, {
+                   threshold: 0.1,
+                   rootMargin: '0px 0px -50px 0px'
+               });
+
+               // Pozorování všech elementů s fade-in třídou
+               document.querySelectorAll('.fade-in').forEach(el => {
+                   this.observer.observe(el);
+               });
+
+               // Navbar scroll efekt
+               this.handleNavbarScroll();
+           }
+
+           handleNavbarScroll() {
+               const navbar = document.getElementById('navbar');
+               let lastScrollTop = 0;
+
+               window.addEventListener('scroll', () => {
+                   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                   
+                   // Přidání scrolled třídy
+                   if (scrollTop > 100) {
+                       navbar.classList.add('scrolled');
+                   } else {
+                       navbar.classList.remove('scrolled');
+                   }
+
+                   lastScrollTop = scrollTop;
+               });
+           }
+       }
+
+       // === EMAIL FORMULÁŘ ===
+       class NewsletterForm {
+           constructor() {
+               this.form = document.getElementById('newsletter-form');
+               this.emailInput = document.getElementById('email-input');
+               this.init();
+           }
+
+           init() {
+               this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+           }
+
+           async handleSubmit(e) {
+               e.preventDefault();
+               
+               const email = this.emailInput.value.trim();
+               if (!email || !this.isValidEmail(email)) {
+                   this.showMessage('Zadejte prosím platnou e-mailovou adresu', 'error');
+                   return;
+               }
+
+               // Zobrazení loading stavu
+               const submitBtn = this.form.querySelector('button[type="submit"]');
+               const originalText = submitBtn.textContent;
+               submitBtn.textContent = 'Odesílání...';
+               submitBtn.disabled = true;
+               
+               try {
+                   // FAPI integrace - zde by byl skutečný endpoint
+                   const response = await fetch('/api/newsletter-subscribe', {
+                       method: 'POST',
+                       headers: {
+                           'Content-Type': 'application/json',
+                       },
+                       body: JSON.stringify({ 
+                           email: email,
+                           language: window.languageSwitcher.currentLang,
+                           source: 'landing-page'
+                       })
+                   });
+
+                   if (response.ok) {
+                       this.showMessage('Děkujeme! Byli jste úspěšně přihlášeni k odběru.', 'success');
+                       this.emailInput.value = '';
+                       
+                       // Google Analytics tracking
+                       if (typeof gtag !== 'undefined') {
+                           gtag('event', 'newsletter_signup', {
+                               'event_category': 'engagement',
+                               'event_label': 'landing_page'
+                           });
+                       }
+                   } else {
+                       throw new Error('Chyba při odesílání');
+                   }
+               } catch (error) {
+                   this.showMessage('Nastala chyba. Zkuste to prosím později.', 'error');
+                   console.error('Newsletter signup error:', error);
+               } finally {
+                   submitBtn.textContent = originalText;
+                   submitBtn.disabled = false;
+               }
+           }
+
+           isValidEmail(email) {
+               const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+               return emailRegex.test(email);
+           }
+
+           showMessage(message, type = 'info') {
+               // Vytvoření toast notifikace
+               const toast = document.createElement('div');
+               toast.className = `toast toast-${type}`;
+               toast.textContent = message;
+               toast.style.cssText = `
+                   position: fixed;
+                   top: 20px;
+                   right: 20px;
+                   background: ${type === 'success' ? '#059669' : type === 'error' ? '#dc2626' : '#2563eb'};
+                   color: white;
+                   padding: 1rem 1.5rem;
+                   border-radius: 8px;
+                   z-index: 10000;
+                   max-width: 300px;
+                   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                   transform: translateX(400px);
+                   transition: transform 0.3s ease-out;
+               `;
+
+               document.body.appendChild(toast);
+
+               // Animace zobrazení
+               setTimeout(() => {
+                   toast.style.transform = 'translateX(0)';
+               }, 100);
+
+               // Automatické odstranění
+               setTimeout(() => {
+                   toast.style.transform = 'translateX(400px)';
+                   setTimeout(() => {
+                       if (toast.parentNode) {
+                           toast.parentNode.removeChild(toast);
+                       }
+                   }, 300);
+               }, 4000);
+           }
+       }
+
+       // === PERFORMANCE MONITORING ===
+       class PerformanceMonitor {
+           constructor() {
+               this.init();
+           }
+
+           init() {
+               // Core Web Vitals monitoring
+               if ('PerformanceObserver' in window) {
+                   this.observeLCP();
+                   this.observeFID();
+                   this.observeCLS();
+               }
+           }
+
+           observeLCP() {
+               new PerformanceObserver((entryList) => {
+                   const entries = entryList.getEntries();
+                   const lastEntry = entries[entries.length - 1];
+                   console.log('LCP:', lastEntry.startTime);
+               }).observe({ entryTypes: ['largest-contentful-paint'] });
+           }
+
+           observeFID() {
+               new PerformanceObserver((entryList) => {
+                   const entries = entryList.getEntries();
+                   entries.forEach(entry => {
+                       console.log('FID:', entry.processingStart - entry.startTime);
+                   });
+               }).observe({ entryTypes: ['first-input'] });
+           }
+
+           observeCLS() {
+               let clsValue = 0;
+               new PerformanceObserver((entryList) => {
+                   const entries = entryList.getEntries();
+                   entries.forEach(entry => {
+                       if (!entry.hadRecentInput) {
+                           clsValue += entry.value;
+                           console.log('CLS:', clsValue);
+                       }
+                   });
+               }).observe({ entryTypes: ['layout-shift'] });
+           }
+       }
+
+       // === INICIALIZACE ===
+       document.addEventListener('DOMContentLoaded', () => {
+           // Inicializace všech tříd
+           window.languageSwitcher = new LanguageSwitcher();
+           new MobileNav();
+           new SmoothScroll();
+           new ScrollAnimations();
+           new NewsletterForm();
+           new PerformanceMonitor();
+
+           // Načtení uložené jazykové preference
+           const savedLang = localStorage.getItem('aet-language');
+           if (savedLang && savedLang !== 'cs') {
+               window.languageSwitcher.switchLanguage(savedLang);
+           }
+
+           // Preload důležitých zdrojů
+           const preloadLinks = [
+               'https://courses.aetaiacademy.com',
+               'https://shop.aetaiacademy.com'
+           ];
+
+           preloadLinks.forEach(url => {
+               const link = document.createElement('link');
+               link.rel = 'prefetch';
+               link.href = url;
+               document.head.appendChild(link);
+           });
+
+           // Service Worker registrace (pro PWA v budoucnu)
+           if ('serviceWorker' in navigator) {
+               navigator.serviceWorker.register('/sw.js').catch(err => {
+                   console.log('SW registration failed:', err);
+               });
+           }
+       });
+
+       // === ERROR HANDLING ===
+       window.addEventListener('error', (e) => {
+           console.error('Global error:', e.error);
+           // Zde by bylo odesílání chyb na server pro monitoring
+       });
+
+       window.addEventListener('unhandledrejection', (e) => {
+           console.error('Unhandled promise rejection:', e.reason);
+           // Zde by bylo odesílání chyb na server pro monitoring
+       });
+   </script>
+
+   <!-- Google Analytics (nahradit vlastním ID) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+   <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'GA_TRACKING_ID');
+   </script>
+
+   <!-- Facebook Pixel (nahradit vlastním ID) -->
+   <script>
+       !function(f,b,e,v,n,t,s)
+       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+       n.queue=[];t=b.createElement(e);t.async=!0;
+       t.src=v;s=b.getElementsByTagName(e)[0];
+       s.parentNode.insertBefore(t,s)}(window, document,'script',
+       'https://connect.facebook.net/en_US/fbevents.js');
+       fbq('init', 'FACEBOOK_PIXEL_ID');
+       fbq('track', 'PageView');
+   </script>
+</body>
+</html>
